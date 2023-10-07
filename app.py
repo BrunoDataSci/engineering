@@ -156,4 +156,4 @@ for ticker in result:
         plt.ylabel('Closing Price')
         plt.legend()
         plt.xticks(rotation=45)
-        st.pyplot
+        st.pyplot()
