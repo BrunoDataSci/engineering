@@ -157,3 +157,5 @@ for ticker in result:
         plt.legend()
         plt.xticks(rotation=45)
         st.pyplot()
+    except:
+        pass
