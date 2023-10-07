@@ -75,7 +75,7 @@ if st.button("RUN"):
     
         except:
             pass
-    
+    st.title(result)
     for ticker in result:
         try:
             data = yf.download(ticker, period="800d")
