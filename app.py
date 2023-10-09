@@ -78,7 +78,7 @@ if st.button("RUN"):
         except:
             pass
     if not result:
-        st.write(f"None of the following stocks verified matches the selections: {tickers}")
+        st.write(f"None of the following verified stocks meet the selected condition: {tickers}")
     else:
         for ticker in result:
             try:
@@ -125,7 +125,7 @@ if st.button("RUN"):
                 predictions_unscaled = scaler.inverse_transform(predictions)
         
                 
-                st.write("Actual vs Predicted Price")
+                st.write("LSTM - Test result")
                 plt.figure(figsize=(12, 6))
                 plt.plot(data.index[train_size + n_steps:], data['Close'].values[train_size + n_steps:], label='Actual')
                 plt.plot(data.index[train_size + n_steps:], predictions_unscaled, label='Predicted')
@@ -155,7 +155,6 @@ if st.button("RUN"):
                     day = day.strftime('%Y-%m-%d')
                     next_days.append(day)
         
-                st.write(f"Stock: {ticker}")
                 st.write(f"Predicted Prices for Next {days} Days")
                 plt.figure(figsize=(12, 6))
                 plt.plot(next_days, predicted_values_unscaled, label='Predicted')
