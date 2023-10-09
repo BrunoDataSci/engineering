@@ -80,7 +80,8 @@ if st.button("RUN"):
     
     for ticker in result:
         try:
-            st.title('Stock: ', ticker)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.title(f"Stock: {ticker}")
             data = yf.download(ticker, period="800d")
             data = data[["Close"]]
     
@@ -121,7 +122,7 @@ if st.button("RUN"):
     
             predictions_unscaled = scaler.inverse_transform(predictions)
     
-            st.write(f"Stock: {ticker}")
+            
             st.write("Actual vs Predicted Price")
             plt.figure(figsize=(12, 6))
             plt.plot(data.index[train_size + n_steps:], data['Close'].values[train_size + n_steps:], label='Actual')
