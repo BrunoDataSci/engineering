@@ -79,7 +79,7 @@ if st.button("Submit"):
             pass
     if not result:
         st.write(f"None of the following verified stocks meet the selected condition: {tickers}")
-        st.write(tickers)
+        st.write({tickers})
     else:
         for ticker in result:
             try:
