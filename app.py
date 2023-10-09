@@ -83,7 +83,7 @@ if st.button("RUN"):
         for ticker in result:
             try:
                 st.set_option('deprecation.showPyplotGlobalUse', False)
-                st.title(f"Stock: {ticker}")
+                st.title(f"Stock symbol: {ticker}")
                 data = yf.download(ticker, period="800d")
                 data = data[["Close"]]
         
@@ -129,7 +129,7 @@ if st.button("RUN"):
                 plt.figure(figsize=(12, 6))
                 plt.plot(data.index[train_size + n_steps:], data['Close'].values[train_size + n_steps:], label='Actual')
                 plt.plot(data.index[train_size + n_steps:], predictions_unscaled, label='Predicted')
-                plt.title(f'{ticker} Price Prediction')
+                plt.title(f'{ticker} - LSTM Test Result')
                 plt.xlabel('Date')
                 plt.ylabel('Closing Price')
                 plt.legend()
