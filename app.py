@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings("ignore")
 
-st.title("Stock Price Prediction")
+st.title("Stock Price Prediction based on certain conditions using LSTM")
 
 tickers = [
     'AAPL', 'MSFT', 'AMZN', 'GOOGL', 'GOOG', 'META', 'BRK.A', 'BRK.B', 'JNJ', 'V',
@@ -79,7 +79,6 @@ if st.button("Submit"):
             pass
     if not result:
         st.write(f"None of the following verified stocks meet the selected condition: {tickers}")
-        st.write({tickers})
     else:
         for ticker in result:
             try:
