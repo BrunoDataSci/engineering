@@ -130,7 +130,7 @@ if st.button("RUN"):
             plt.xlabel('Date')
             plt.ylabel('Closing Price')
             plt.legend()
-            st.pyplot(fig)
+            st.pyplot()
     
             last_sequence = X_train[-1]
     
@@ -161,6 +161,6 @@ if st.button("RUN"):
             plt.ylabel('Closing Price')
             plt.legend()
             plt.xticks(rotation=45)
-            st.pyplot(fig)
+            st.pyplot()
         except:
             pass
