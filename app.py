@@ -22,10 +22,10 @@ tickers = [
 
 # User input
 trend_choice = st.selectbox("Select Trend", ["Bullish", "Bearish"])
-ema_choice = st.selectbox("Select EMA21 Condition", ["Above", "Below"])
+ema_choice = st.selectbox("Select Price condition compared to the Exponential Moving Average (17)", ["Above", "Below"])
 rsi_choice = st.selectbox("Select RSI Condition", ["Overbought", "Oversold", "Neither"])
 
-if st.button("RUN"):
+if st.button("Submit"):
 
     result = []
     
