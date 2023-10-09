@@ -7,6 +7,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+import warnings
+warnings.filterwarnings("ignore")
 
 st.title("Stock Price Prediction")
 
@@ -75,9 +77,10 @@ if st.button("RUN"):
     
         except:
             pass
-    st.title(result)
+    
     for ticker in result:
         try:
+            st.title('Stock: ', ticker)
             data = yf.download(ticker, period="800d")
             data = data[["Close"]]
     
