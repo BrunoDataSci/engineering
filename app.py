@@ -40,9 +40,9 @@ if st.button("RUN"):
             else:
                 ema_condition = "Above"
     
-            data['Trend'] = 'Bear'
+            data['Trend'] = 'Bearish'
             data['EMA34'] = data['Close'].rolling(window=34).mean()
-            data.loc[data['EMA17'] > data['EMA34'], 'Trend'] = 'Bull'
+            data.loc[data['EMA17'] > data['EMA34'], 'Trend'] = 'Bullish'
             trend_condition = data['Trend'].tail(1).values[0]
     
             def calculate_rsi(data):
